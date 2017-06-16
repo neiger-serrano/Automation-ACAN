@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="methods" thread-count="1">
+
+  <listeners>
+
+	<!-- WEB DRIVER -->
+	<listener class-name="generic.managers.WebDriverManager">
+		<parameter name="url" value="https://acan-staging.firebaseapp.com" />
+		<parameter name="executionMode" value="local" />
+		<parameter name="browser" value= "chrome" />
+		<parameter name="platform" value="windows" />
+		<parameter name="gridHubIP" value="127.0.0.1" />
+		<parameter name="gridDriverPath" value=""/>
+		<parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>
+		<parameter name="staticTimeout" value="0" />
+		<parameter name="dynamicTimeout" value="30" />
+		<parameter name="geckoDriver" value="false"/>
+	</listener>
+
+  </listeners>
+
+  <parameter name="exceptionDriven" value="false" />
+
+  <test name="Test Manager">
+    <parameter name="email" value="qaacan@gmail.com"/>
+    <parameter name="pwd" value="123Test"/>
+    <parameter name="emailNotRegistered" value="nsm@avantica.net"/>
+    
+    <parameter name="searchByCodFed" value="05753"/>
+    <parameter name="searchByName" value="COCO"/>
+    <parameter name="searchByOwner" value="GERARDO CHENA LOPEZ"/>
+    <parameter name="noValidSearch" value="85264" />
+    <parameter name="searchOwnerByCodFed" value="141"/>
+
+    
+    <classes>
+       <class name="tests.LoginTests">
+                   	<methods>         		
+            		<include name="forgotPasswordRegisteredEmail_ACAN_27" />
+            		<include name="forgotPasswordNotRegisteredEmail_ACAN_198" />
+            		<include name="noValidSignIn_ACAN_4_" />
+            		<include name="validSignIn_ACAN_2_" />
+            	</methods>
+       </class>
+       
+        <class name="tests.DogsTests">
+                   	<methods>
+            		<include name="verifyTypeSearchBar_ACAN_51" />
+            		<include name="agregarPerro_ACAN_37" />
+            		<include name="verifyDogsTable_ACAN_34" />
+            		<include name="searchAndwatchDog_ACAN_55" />
+            		<include name="searchAndeditDog_ACAN_59" />
+            	</methods>
+       </class>
+       
+       <class name="tests.OwnersTests">
+                   	<methods>
+            		<include name="verifyTypeSearchBar_ACAN_94" />
+            		<include name="addOwner_ACAN_42" />
+            	</methods>
+       </class>
+       
+       <class name="tests.AdminsTests">
+                   	<methods>
+            		<include name="agregarAdmin_ACAN_14" />
+            	</methods>
+       </class>
+       
+       <class name="tests.ChangePwdTests">
+                   	<methods>
+            		<include name="changePwd_ACAN_20" />
+            	</methods>
+       </class>
+       
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
