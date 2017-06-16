@@ -32,11 +32,6 @@ public class DogsPage extends BasePage{
 	@FindBy(id = "edit-dog")
 	private WebElement editDog;
 	
-	//$x("//table")
-	//$x("//table//tbody") Content
-	//$x("//table//thead") Títulos
-	
-	
 	//**********CONSTRUCTOR*****************
 	public DogsPage(WebDriver driver) {
 		super(driver);
@@ -47,7 +42,6 @@ public class DogsPage extends BasePage{
 	@Override
 	public boolean verifyLoads() {
 		return waitForElementsVisible(searchBar, agregarButton, dropdownEdit) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
-//		return waitForElementsVisible(searchBar, agregarButton, viewDog, editDog) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
 	}
 	
 	
@@ -57,39 +51,33 @@ public class DogsPage extends BasePage{
 		return waitAndTypeOnCleanElement(searchBar, searchText); //&& this.verifyLoads();
 	}
 	
-	
-	// No se usa
-	//public boolean clearSearchBar(){
-	//	return waitAndTypeOnCleanElement(searchBar, "");
-	//}
-	
 	public RegisterDogPage registrarPerro(){
-		waitAndClick(agregarButton);
+		waitAndClick(nav.genericButton("AGREGAR"));
 		wait(3);
 		return new RegisterDogPage(driver);
 	}
 	
 	public boolean checkTableTitles(List<String> tableTitles){
-		for (int i=0; i<tableValues.size(); i++){
-			isElementPresentOnList(tableValues, tableTitles.get(i));
-			System.out.println(getTextFromElement(tableValues.get(i)));
+		boolean vlr = waitForListMatchSize(tableValues, 5);
+		
+		if(vlr) {
+			for (int i=0, lim = tableValues.size(); i<lim && !vlr; i++){
+				vlr = waitForElementsVisible(tableValues.get(i));
+				waitForTextOnElement(tableValues.get(i), tableTitles.get(i));
+			}
 		}
-		return true;
+		return vlr;
 	}
 	
 	public NavigationPage clickViewDog(){
-		//wait(3);
 		waitAndClick(dropdownEdit);
-		//wait(1);
 		waitAndClick(viewDog);
 		wait(1);
 		return new NavigationPage(driver); 
 	}
 	
 	public RegisterDogPage clickEditDog(){
-		//wait(3);
 		waitAndClick(dropdownEdit);
-		//wait(1);
 		waitAndClick(editDog);
 		wait(1);
 		return new RegisterDogPage(driver);

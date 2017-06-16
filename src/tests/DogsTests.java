@@ -15,11 +15,11 @@ import pages.RegisterDogPage;
 
 public class DogsTests extends WebDriverManager{
 	
-	LoginPage loginPage;
-	NavigationPage navigationPage;
-	DogsPage dogsPage;
-	RegisterDogPage registerDogPage;
-	List<String> tableTitles = Arrays.asList("","Cód. de Federación", "Nombre", "Raza", "Nombre del Propietario");
+	private LoginPage loginPage;
+	private NavigationPage navigationPage;
+	private DogsPage dogsPage;
+	private RegisterDogPage registerDogPage;
+	public List<String> tableTitles = Arrays.asList("","Cód. de Federación", "Nombre", "Raza", "Nombre del Propietario");
 	
 	
 	@Parameters({"email", "pwd"})

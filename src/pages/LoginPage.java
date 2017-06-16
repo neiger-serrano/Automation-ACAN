@@ -13,32 +13,32 @@ public class LoginPage extends BasePage{
 	//**********WEB ELEMENTS*****************
 	
 	@FindBy(xpath =  "//input[@name='user']")
-	WebElement emailTextField;
+	private WebElement emailTextField;
 	
 	@FindBy(xpath = "//input[@name='password']")
-	WebElement passwordTextField;
+	private WebElement passwordTextField;
 	
 	@FindBy(xpath = "//a[contains(text(),'Iniciar Sesión')]")
 	//@FindBy(xpath = "//div//a[@class='waves-effect waves-light btn']")
-	WebElement signInBth;
+	private WebElement signInBth;
 	
 	@FindBy(xpath = "//div//a[@href='#forgot-password']")
-	WebElement forgotPassButton;
+	private WebElement forgotPassButton;
 	
 	@FindBy(id= "email")
-	WebElement typeEmail;
+	private WebElement typeEmail;
 	
 	@FindBy(xpath = "//a[contains(text(),'Cancelar')]")
-	WebElement cancelarButton;
+	private WebElement cancelarButton;
 	
 	@FindBy(xpath = "//a[contains(text(),'Enviar')]")
-	WebElement enviarButton;
+	private WebElement enviarButton;
 	
 	@FindBy(id = "notification-title")
-	WebElement titleMessage;
+	private WebElement titleMessage;
 	
 	@FindBy(xpath = "//a[contains(text(),'OK!')]")
-	WebElement okButton;
+	private WebElement okButton;
 	
 	@FindBy(xpath = "//div[contains(@class,'modal open')]//p")
 	private WebElement popupText;

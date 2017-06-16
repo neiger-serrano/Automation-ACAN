@@ -12,10 +12,10 @@ import pages.RegisterAdminPage;
 
 public class AdminsTests extends WebDriverManager{
 	
-	LoginPage loginPage;
-	DogsPage dogsPage;
-	AdminsPage adminsPage;
-	RegisterAdminPage registerAdminsPage;
+	private LoginPage loginPage;
+	private DogsPage dogsPage;
+	private AdminsPage adminsPage;
+	private RegisterAdminPage registerAdminsPage;
 	
 	@Parameters({"email", "pwd"})
 	@BeforeMethod
@@ -30,5 +30,6 @@ public class AdminsTests extends WebDriverManager{
 	@Test
 	public void agregarAdmin_ACAN_14(){
 		registerAdminsPage = adminsPage.registrarAdmin();
+		registerAdminsPage.verifyLoads();
 	}
 }

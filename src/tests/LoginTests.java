@@ -1,5 +1,8 @@
 package tests;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -8,13 +11,12 @@ import org.testng.annotations.Test;
 import generic.managers.WebDriverManager;
 import pages.DogsPage;
 import pages.LoginPage;
-import pages.NavigationPage;
 
 
 public class LoginTests extends WebDriverManager{
 	
-	LoginPage loginPage;
-	NavigationPage navigationPage;
+	private LoginPage loginPage;
+	private List<String> sideMenu = Arrays.asList("Perros","Propietarios", "Administradores", "Cambiar Contraseña", "Cerrar Sesión");
 
 	@BeforeMethod
 	public void setUp(){

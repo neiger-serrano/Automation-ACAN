@@ -11,10 +11,10 @@ public class OwnersPage extends BasePage{
 
 	//**********WEB ELEMENTS*****************
 	@FindBy(id = "autocomplete-input")
-	WebElement searchBar;
+	private WebElement searchBar;
 	
 	@FindBy(xpath = "//a[contains(text(),'AGREGAR')]")
-	WebElement agregarButton;
+	private WebElement agregarButton;
 	
 	
 	
@@ -39,7 +39,6 @@ public class OwnersPage extends BasePage{
 	
 	public RegisterOwnerPage registerOwner(){
 		waitAndClick(agregarButton);
-		wait(3);
 		return new RegisterOwnerPage(driver);
 	}
 	

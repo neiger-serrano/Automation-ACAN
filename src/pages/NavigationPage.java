@@ -8,22 +8,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import generic.utils.web.BasePage;
+import tests.DogsTests;
 
 public class NavigationPage extends BasePage{
 	
 	//**********WEB ELEMENTS*****************
 	
 	@FindBy(xpath = "//div//li//a[@class='menu-button']")
-	List<WebElement> menuOptions;
+	private List<WebElement> menuOptions;
 	
 	@FindBy(xpath = "//input[@name='Cerrar Sesión'")
-	WebElement cerrarSesion;
+	private WebElement cerrarSesion;
 	
 	@FindBy(xpath = "//div[@class='current-user']//p[2]")
-	WebElement currentUser;
+	private WebElement currentUser;
 	
 	@FindBy(xpath = "//a[contains(text(),'MODIFICAR')]")
 	private WebElement modifyDogButton;
+	
+	private DogsTests dogstest;
 	
 	//**********CONSTRUCTOR*****************
 	public NavigationPage(WebDriver driver){
@@ -38,7 +41,7 @@ public class NavigationPage extends BasePage{
 		if(vlr) {
 			for (int i=0, lim = menuOptions.size(); i<lim && !vlr; i++){
 				vlr = waitForElementsVisible(menuOptions.get(i));
-				// hacer una verificacion por texto de acuerdo a cada opcion
+				waitForTextOnElement(menuOptions.get(i), dogstest.tableTitles.get(i));// hacer una verificacion por texto de acuerdo a cada opcion
 			}
 		}
 		return vlr && waitForElementsVisible(currentUser);
@@ -46,12 +49,12 @@ public class NavigationPage extends BasePage{
 	
 	//**********METHODS*****************
 	
+	
 	public WebDriver goToPage(String option) {
 		findElement(By.xpath("//div[contains(@class,'side-options')]//a[text()='" + option + "']"));
 		//findElement(By.xpath("//div[contains(@class,'side-options')]//a['" + option + "']"));
 	    return driver;
 	}
-	
 	
 	public boolean verifyUser(String user){
 		System.out.println(getTextFromElement(currentUser));
@@ -88,6 +91,10 @@ public class NavigationPage extends BasePage{
 	public RegisterDogPage modifyDog(){
 		waitAndClick(modifyDogButton);
 		return new RegisterDogPage(driver);
+	}
+	
+	public WebElement genericButton(String buttonName){
+		return findElement(By.xpath("//a[contains(text(),'" + buttonName + "')]"));
 	}
 	
 }

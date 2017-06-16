@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <parameter name="searchByCodFed" value="05753"/>
+  <parameter name="dynamicTimeout" value="30"/>
+  <parameter name="staticTimeout" value="0"/>
+  <parameter name="noValidSearch" value="85264"/>
+  <parameter name="executionMode" value="local"/>
+  <parameter name="url" value="https://acan-staging.firebaseapp.com"/>
+  <parameter name="platform" value="windows"/>
+  <parameter name="gridDriverPath" value=""/>
+  <parameter name="exceptionDriven" value="false"/>
+  <parameter name="searchByOwner" value="GERARDO CHENA LOPEZ"/>
+  <parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>
+  <parameter name="searchByName" value="COCO"/>
+  <parameter name="geckoDriver" value="false"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="gridHubIP" value="127.0.0.1"/>
+  <parameter name="searchOwnerByCodFed" value="141"/>
+  <parameter name="pwd" value="123Test"/>
+  <parameter name="email" value="qaacan@gmail.com"/>
+  <parameter name="emailNotRegistered" value="nsm@avantica.net"/>
+  <listeners>
+    <listener class-name="generic.managers.WebDriverManager"/>
+  </listeners>
+  <test name="Test Manager">
+    <parameter name="searchByCodFed" value="05753"/>
+    <parameter name="searchByOwner" value="GERARDO CHENA LOPEZ"/>
+    <parameter name="searchByName" value="COCO"/>
+    <parameter name="noValidSearch" value="85264"/>
+    <parameter name="searchOwnerByCodFed" value="141"/>
+    <parameter name="pwd" value="123Test"/>
+    <parameter name="email" value="qaacan@gmail.com"/>
+    <parameter name="emailNotRegistered" value="nsm@avantica.net"/>
+    <classes>
+      <class name="tests.LoginTests">
+        <methods>
+          <exclude name="forgotPasswordRegisteredEmail_ACAN_27"/>
+          <exclude name="forgotPasswordNotRegisteredEmail_ACAN_198"/>
+          <exclude name="noValidSignIn_ACAN_4_"/>
+          <exclude name="validSignIn_ACAN_2_"/>
+        </methods>
+      </class> <!-- tests.LoginTests -->
+      <class name="tests.DogsTests">
+        <methods>
+          <include name="agregarPerro_ACAN_37"/>
+          <exclude name="verifyTypeSearchBar_ACAN_51"/>
+          <exclude name="verifyDogsTable_ACAN_34"/>
+          <exclude name="searchAndwatchDog_ACAN_55"/>
+          <exclude name="searchAndeditDog_ACAN_59"/>
+        </methods>
+      </class> <!-- tests.DogsTests -->
+      <class name="tests.OwnersTests">
+        <methods>
+          <exclude name="verifyTypeSearchBar_ACAN_94"/>
+          <exclude name="addOwner_ACAN_42"/>
+        </methods>
+      </class> <!-- tests.OwnersTests -->
+      <class name="tests.AdminsTests">
+        <methods>
+          <exclude name="agregarAdmin_ACAN_14"/>
+        </methods>
+      </class> <!-- tests.AdminsTests -->
+      <class name="tests.ChangePwdTests">
+        <methods>
+          <exclude name="changePwd_ACAN_20"/>
+        </methods>
+      </class> <!-- tests.ChangePwdTests -->
+    </classes>
+  </test> <!-- Test Manager -->
+</suite> <!-- Failed suite [Suite] -->

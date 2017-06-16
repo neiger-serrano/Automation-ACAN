@@ -12,7 +12,7 @@ public class AdminsPage extends BasePage{
 	//**********WEB ELEMENTS*****************
 	
 	@FindBy(xpath = "//a[contains(text(),'AGREGAR USUARIO')]")
-	WebElement agregarButton;
+	private WebElement agregarButton;
 	
 	
 	

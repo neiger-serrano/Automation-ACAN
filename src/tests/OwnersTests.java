@@ -7,18 +7,16 @@ import org.testng.annotations.Test;
 import generic.managers.WebDriverManager;
 import pages.DogsPage;
 import pages.LoginPage;
-import pages.NavigationPage;
 import pages.OwnersPage;
 import pages.RegisterOwnerPage;
 
 public class OwnersTests extends WebDriverManager{
 	
 	
-	LoginPage loginPage;
-	NavigationPage navigationPage;
-	OwnersPage ownersPage;
-	RegisterOwnerPage registerOwnerPage;
-	DogsPage dogsPage;
+	private LoginPage loginPage;
+	private OwnersPage ownersPage;
+	private RegisterOwnerPage registerOwnerPage;
+	private DogsPage dogsPage;
 	
 	
 	@Parameters({"email", "pwd"})
@@ -28,6 +26,7 @@ public class OwnersTests extends WebDriverManager{
 		dogsPage = loginPage.logInValidation(email,pwd);
 		assertTrue(dogsPage.verifyLoads(), " [ERROR] Dogs page not displayed correctly after login");
 		ownersPage = dogsPage.nav.clickOwnersPage();
+		
 	}
 	
 	
@@ -46,5 +45,6 @@ public class OwnersTests extends WebDriverManager{
 	@Test
 	public void addOwner_ACAN_42(){
 		registerOwnerPage = ownersPage.registerOwner();
+		registerOwnerPage.verifyLoads();
 	}
 }

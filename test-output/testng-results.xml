@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="14202" started-at="2017-06-16T22:27:36Z" finished-at="2017-06-16T22:27:50Z">
+    <groups>
+    </groups>
+    <test name="Test Manager" duration-ms="14202" started-at="2017-06-16T22:27:36Z" finished-at="2017-06-16T22:27:50Z">
+      <class name="tests.LoginTests">
+        <test-method status="PASS" signature="setSuiteManager()[pri:0, instance:[LoginTests passed=0 failed=0 skipped=0]]" name="setSuiteManager" is-config="true" duration-ms="5" started-at="2017-06-16T16:27:36Z" finished-at="2017-06-16T16:27:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setSuiteManager -->
+        <test-method status="PASS" signature="setupMaps()[pri:0, instance:[LoginTests passed=0 failed=0 skipped=0]]" name="setupMaps" is-config="true" duration-ms="0" started-at="2017-06-16T16:27:36Z" depends-on-methods="generic.managers.TestManager.setSuiteManager" finished-at="2017-06-16T16:27:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMaps -->
+        <test-method status="PASS" signature="setUpTestManager(java.lang.String)[pri:0, instance:[LoginTests passed=0 failed=0 skipped=0]]" name="setUpTestManager" is-config="true" duration-ms="1" started-at="2017-06-16T16:27:36Z" finished-at="2017-06-16T16:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTestManager -->
+        <test-method status="PASS" signature="setUpParameters(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int, boolean)[pri:0, instance:[LoginTests passed=0 failed=0 skipped=0]]" name="setUpParameters" is-config="true" duration-ms="1" started-at="2017-06-16T16:27:36Z" depends-on-methods="generic.managers.TestManager.setUpTestManager" finished-at="2017-06-16T16:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://acan-staging.firebaseapp.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[local]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[windows]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[127.0.0.1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[C:\SeleniumDriverServer\]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpParameters -->
+      </class> <!-- tests.LoginTests -->
+      <class name="tests.DogsTests">
+        <test-method status="PASS" signature="setMethodManager(java.lang.reflect.Method)[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="setMethodManager" is-config="true" duration-ms="1" started-at="2017-06-16T16:27:36Z" finished-at="2017-06-16T16:27:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.DogsTests.agregarPerro_ACAN_37()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setMethodManager -->
+        <test-method status="PASS" signature="setupWebDriver()[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="setupWebDriver" is-config="true" duration-ms="6901" started-at="2017-06-16T16:27:36Z" finished-at="2017-06-16T16:27:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupWebDriver -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="setUp" is-config="true" duration-ms="3253" started-at="2017-06-16T16:27:43Z" finished-at="2017-06-16T16:27:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qaacan@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123Test]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="agregarPerro_ACAN_37()[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="agregarPerro_ACAN_37" duration-ms="3145" started-at="2017-06-16T16:27:46Z" finished-at="2017-06-16T16:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- agregarPerro_ACAN_37 -->
+        <test-method status="PASS" signature="closeWebDriver(org.testng.ITestResult)[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="closeWebDriver" is-config="true" duration-ms="889" started-at="2017-06-16T16:27:49Z" finished-at="2017-06-16T16:27:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=agregarPerro_ACAN_37 on [DogsTests passed=0 failed=0 skipped=0] status=FAILURE method=DogsTests.agregarPerro_ACAN_37()[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebDriver -->
+        <test-method status="PASS" signature="endMethodManager(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]]" name="endMethodManager" is-config="true" duration-ms="1" started-at="2017-06-16T16:27:50Z" finished-at="2017-06-16T16:27:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=agregarPerro_ACAN_37 on [DogsTests passed=0 failed=0 skipped=0] status=FAILURE method=DogsTests.agregarPerro_ACAN_37()[pri:0, instance:[DogsTests passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.DogsTests.agregarPerro_ACAN_37()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endMethodManager -->
+      </class> <!-- tests.DogsTests -->
+    </test> <!-- Test Manager -->
+  </suite> <!-- Suite -->
+</testng-results>

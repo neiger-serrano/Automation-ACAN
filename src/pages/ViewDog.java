@@ -22,8 +22,7 @@ public class ViewDog extends BasePage{
 
 	@Override
 	public boolean verifyLoads() {
-		// TODO Auto-generated method stub
-		return false;
+		return waitForElementVisible(modifyDogButton);
 	}
 	
 	

@@ -11,9 +11,9 @@ import pages.LoginPage;
 
 public class ChangePwdTests extends WebDriverManager{
 	
-	LoginPage loginPage;
-	DogsPage dogsPage;
-	ChangePwdPage changePwdPage;
+	private LoginPage loginPage;
+	private DogsPage dogsPage;
+	private ChangePwdPage changePwdPage;
 	
 	@Parameters({"email", "pwd"})
 	@Test
@@ -22,5 +22,6 @@ public class ChangePwdTests extends WebDriverManager{
 		dogsPage = loginPage.logInValidation(email,pwd);
 		assertTrue(dogsPage.verifyLoads(), " [ERROR] Dogs page not displayed correctly after login");
 		dogsPage.nav.goToPage("Cambiar Contraseña");
+		changePwdPage.verifyLoads();
 	}
 }
