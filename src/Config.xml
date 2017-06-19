@@ -35,42 +35,45 @@
     <parameter name="searchOwnerByCodFed" value="141"/>
 
     
+    
     <classes>
        <class name="tests.LoginTests">
                    	<methods>         		
-            		<include name="forgotPasswordRegisteredEmail_ACAN_27" />
-            		<include name="forgotPasswordNotRegisteredEmail_ACAN_198" />
-            		<include name="noValidSignIn_ACAN_4_" />
-            		<include name="validSignIn_ACAN_2_" />
+            		<exclude name="forgotPasswordRegisteredEmail_ACAN_27" />
+            		<exclude name="forgotPasswordNotRegisteredEmail_ACAN_198" />
+            		<exclude name="emailAutoFillEmail" />
+            		<exclude name="noValidSignIn_ACAN_4_" />
+            		<exclude name="validSignIn_ACAN_2_" />
             	</methods>
        </class>
        
         <class name="tests.DogsTests">
                    	<methods>
-            		<include name="verifyTypeSearchBar_ACAN_51" />
-            		<include name="agregarPerro_ACAN_37" />
-            		<include name="verifyDogsTable_ACAN_34" />
-            		<include name="searchAndwatchDog_ACAN_55" />
-            		<include name="searchAndeditDog_ACAN_59" />
+            		<exclude name="verifyTypeSearchBar_ACAN_51" />
+            		<exclude name="agregarPerro_ACAN_37" />
+            		<include name="verifyAgregarPerroSuccessfully" />
+            		<exclude name="verifyDogsTable_ACAN_34" />
+            		<exclude name="searchAndwatchDog_ACAN_55" />
+            		<exclude name="searchAndeditDog_ACAN_59" />
             	</methods>
        </class>
        
        <class name="tests.OwnersTests">
                    	<methods>
-            		<include name="verifyTypeSearchBar_ACAN_94" />
-            		<include name="addOwner_ACAN_42" />
+            		<exclude name="verifyTypeSearchBar_ACAN_94" />
+            		<exclude name="addOwner_ACAN_42" />
             	</methods>
        </class>
        
        <class name="tests.AdminsTests">
                    	<methods>
-            		<include name="agregarAdmin_ACAN_14" />
+            		<exclude name="agregarAdmin_ACAN_14" />
             	</methods>
        </class>
        
        <class name="tests.ChangePwdTests">
                    	<methods>
-            		<include name="changePwd_ACAN_20" />
+            		<exclude name="changePwd_ACAN_20" />
             	</methods>
        </class>
        

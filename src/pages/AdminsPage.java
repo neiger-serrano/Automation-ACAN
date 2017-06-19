@@ -34,7 +34,6 @@ public class AdminsPage extends BasePage{
 	
 	public RegisterAdminPage registrarAdmin(){
 		waitAndClick(agregarButton);
-		wait(3);
 		return new RegisterAdminPage(driver);
 	}
 	

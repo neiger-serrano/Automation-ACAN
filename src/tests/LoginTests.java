@@ -48,7 +48,7 @@ public class LoginTests extends WebDriverManager{
 	@Parameters("email")
 	@Test
 	public void forgotPasswordRegisteredEmail_ACAN_27(String email){
-		assertTrue(loginPage.forgotPwdEmail(email),  " [ERROR] ");
+		assertTrue(loginPage.forgotPwdEmail(email),  " [ERROR] Pop-up is not being displayed");
 		assertTrue(loginPage.verifyErrorMsg("Su contraseña ha sido enviada"), " [ERROR] ");
 		assertAll();
 	}
@@ -56,8 +56,16 @@ public class LoginTests extends WebDriverManager{
 	@Parameters("emailNotRegistered")
 	@Test
 	public void forgotPasswordNotRegisteredEmail_ACAN_198(String email){
-		assertTrue(loginPage.forgotPwdEmail(email),   " [ERROR] ");
+		assertTrue(loginPage.forgotPwdEmail(email),   " [ERROR] Pop-up is not being displayed");
 		assertTrue(loginPage.verifyErrorMsg("Su correo electrónico no está asociado a ningún usuario. Contacte al administrador del sistema para solucionar el problema."), " [ERROR] ");
+		assertAll();
+	}
+	
+	@Parameters("emailNotRegistered")
+	@Test
+	public void emailAutoFillEmail(String email){
+		assertTrue(loginPage.verifyAutoFillEmail(email),   " [ERROR] Pop-up is not being displayed");
+		//assertTrue(loginPage.verifyErrorMsg("Su correo electrónico no está asociado a ningún usuario. Contacte al administrador del sistema para solucionar el problema."), " [ERROR] ");
 		assertAll();
 	}
 	

@@ -26,6 +26,9 @@ public class NavigationPage extends BasePage{
 	@FindBy(xpath = "//a[contains(text(),'MODIFICAR')]")
 	private WebElement modifyDogButton;
 	
+	@FindBy(xpath = "//div//a[@class='brand-logo']//i")	
+	private WebElement sideMenuButton;
+	
 	private DogsTests dogstest;
 	
 	//**********CONSTRUCTOR*****************
@@ -44,7 +47,7 @@ public class NavigationPage extends BasePage{
 				waitForTextOnElement(menuOptions.get(i), dogstest.tableTitles.get(i));// hacer una verificacion por texto de acuerdo a cada opcion
 			}
 		}
-		return vlr && waitForElementsVisible(currentUser);
+		return vlr && waitForElementsVisible(currentUser, sideMenuButton);
 	}
 	
 	//**********METHODS*****************
@@ -95,6 +98,10 @@ public class NavigationPage extends BasePage{
 	
 	public WebElement genericButton(String buttonName){
 		return findElement(By.xpath("//a[contains(text(),'" + buttonName + "')]"));
+	}
+	
+	public boolean clickMenuButton(){
+		return waitAndClick(sideMenuButton);
 	}
 	
 }

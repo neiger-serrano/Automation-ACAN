@@ -31,6 +31,7 @@ public class DogsPage extends BasePage{
 	
 	@FindBy(id = "edit-dog")
 	private WebElement editDog;
+
 	
 	//**********CONSTRUCTOR*****************
 	public DogsPage(WebDriver driver) {
@@ -41,7 +42,7 @@ public class DogsPage extends BasePage{
 
 	@Override
 	public boolean verifyLoads() {
-		return waitForElementsVisible(searchBar, agregarButton, dropdownEdit) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
+		return waitForElementsVisible(searchBar, /*agregarButton,*/ dropdownEdit) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
 	}
 	
 	

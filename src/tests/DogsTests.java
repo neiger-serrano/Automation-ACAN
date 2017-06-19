@@ -12,6 +12,7 @@ import pages.DogsPage;
 import pages.LoginPage;
 import pages.NavigationPage;
 import pages.RegisterDogPage;
+import utils.Utilities;
 
 public class DogsTests extends WebDriverManager{
 	
@@ -20,6 +21,7 @@ public class DogsTests extends WebDriverManager{
 	private DogsPage dogsPage;
 	private RegisterDogPage registerDogPage;
 	public List<String> tableTitles = Arrays.asList("","Cód. de Federación", "Nombre", "Raza", "Nombre del Propietario");
+	private Utilities utilities;
 	
 	
 	@Parameters({"email", "pwd"})
@@ -51,8 +53,24 @@ public class DogsTests extends WebDriverManager{
 	
 	@Test
 	public void agregarPerro_ACAN_37(){
+		assertTrue(dogsPage.nav.clickMenuButton(), " [ERROR] Unable to hide side Menu");
 		registerDogPage = dogsPage.registrarPerro();
+		assertTrue(registerDogPage.verifyLoads(), " [ERROR] Register dog page not displayed correctly after click AGREGAR");
+		assertAll();
+		dogsPage.nav.clickMenuButton();
+		dogsPage.nav.logoutUser();
 	}
+	
+	@Test
+	public void verifyAgregarPerroSuccessfully(){
+		assertTrue(dogsPage.nav.clickMenuButton(), " [ERROR] Unable to hide side Menu");
+		registerDogPage = dogsPage.registrarPerro();
+		utilities = new Utilities();
+		String codChip = utilities.randomCodChip();
+		registerDogPage.fillFields(utilities.randomUserName(), codChip, codChip);
+		
+	}	
+	
 	
 	@Test
 	public void verifyDogsTable_ACAN_34(){
@@ -78,5 +96,4 @@ public class DogsTests extends WebDriverManager{
 		navigationPage = registerDogPage.cancelarDog();
 		navigationPage.logoutUser();
 	}
-	
 }

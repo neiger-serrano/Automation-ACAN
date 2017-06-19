@@ -73,4 +73,8 @@ public class LoginPage extends BasePage{
 	public boolean verifyErrorMsg(String txt) {
 		return waitForTextOnElement(popupText, txt);
 	}
+	
+	public boolean verifyAutoFillEmail(String email){
+		return waitAndTypeOnCleanElement(emailTextField, email) && waitAndClick(forgotPassButton);
+	}
 }
