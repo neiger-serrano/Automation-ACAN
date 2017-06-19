@@ -21,7 +21,7 @@ public class ChangePwdTests extends WebDriverManager{
 		loginPage = new LoginPage(getDriver());
 		dogsPage = loginPage.logInValidation(email,pwd);
 		assertTrue(dogsPage.verifyLoads(), " [ERROR] Dogs page not displayed correctly after login");
-		dogsPage.nav.goToPage("Cambiar Contraseña");
+		dogsPage.nav.goToPage("Cambiar ContraseÃ±a");
 		changePwdPage.verifyLoads();
 	}
 }

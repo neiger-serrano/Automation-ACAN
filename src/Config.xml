@@ -12,7 +12,8 @@
 		<parameter name="platform" value="windows" />
 		<parameter name="gridHubIP" value="127.0.0.1" />
 		<parameter name="gridDriverPath" value=""/>
-		<parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>
+		<!--<parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>-->
+		<parameter name="localDriverPath" value="" />
 		<parameter name="staticTimeout" value="0" />
 		<parameter name="dynamicTimeout" value="30" />
 		<parameter name="geckoDriver" value="false"/>
@@ -37,39 +38,39 @@
     <classes>
        <class name="tests.LoginTests">
                    	<methods>         		
-            		<exclude name="forgotPasswordRegisteredEmail_ACAN_27" />
-            		<exclude name="forgotPasswordNotRegisteredEmail_ACAN_198" />
-            		<exclude name="noValidSignIn_ACAN_4_" />
-            		<exclude name="validSignIn_ACAN_2_" />
+            		<include name="forgotPasswordRegisteredEmail_ACAN_27" />
+            		<include name="forgotPasswordNotRegisteredEmail_ACAN_198" />
+            		<include name="noValidSignIn_ACAN_4_" />
+            		<include name="validSignIn_ACAN_2_" />
             	</methods>
        </class>
        
         <class name="tests.DogsTests">
                    	<methods>
-            		<exclude name="verifyTypeSearchBar_ACAN_51" />
+            		<include name="verifyTypeSearchBar_ACAN_51" />
             		<include name="agregarPerro_ACAN_37" />
-            		<exclude name="verifyDogsTable_ACAN_34" />
-            		<exclude name="searchAndwatchDog_ACAN_55" />
-            		<exclude name="searchAndeditDog_ACAN_59" />
+            		<include name="verifyDogsTable_ACAN_34" />
+            		<include name="searchAndwatchDog_ACAN_55" />
+            		<include name="searchAndeditDog_ACAN_59" />
             	</methods>
        </class>
        
        <class name="tests.OwnersTests">
                    	<methods>
-            		<exclude name="verifyTypeSearchBar_ACAN_94" />
-            		<exclude name="addOwner_ACAN_42" />
+            		<include name="verifyTypeSearchBar_ACAN_94" />
+            		<include name="addOwner_ACAN_42" />
             	</methods>
        </class>
        
        <class name="tests.AdminsTests">
                    	<methods>
-            		<exclude name="agregarAdmin_ACAN_14" />
+            		<include name="agregarAdmin_ACAN_14" />
             	</methods>
        </class>
        
        <class name="tests.ChangePwdTests">
                    	<methods>
-            		<exclude name="changePwd_ACAN_20" />
+            		<include name="changePwd_ACAN_20" />
             	</methods>
        </class>
        

@@ -19,7 +19,7 @@ public class DogsTests extends WebDriverManager{
 	private NavigationPage navigationPage;
 	private DogsPage dogsPage;
 	private RegisterDogPage registerDogPage;
-	public List<String> tableTitles = Arrays.asList("","C骴. de Federaci髇", "Nombre", "Raza", "Nombre del Propietario");
+	public List<String> tableTitles = Arrays.asList("","C贸d. de Federaci贸n", "Nombre", "Raza", "Nombre del Propietario");
 	
 	
 	@Parameters({"email", "pwd"})
@@ -35,7 +35,7 @@ public class DogsTests extends WebDriverManager{
 	@Test
 	public void verifyTypeSearchBar_ACAN_51(String searchByCodFed, String searchByName, String searchByOwner, String noValidSearch){
 		assertTrue(dogsPage.searchDogs(searchByCodFed), " [ERROR] Search was not made");
-		System.out.println("Search by C骴igo de Federaci髇");
+		System.out.println("Search by C贸digo de Federac贸n");
 		assertTrue(dogsPage.searchDogs(searchByName), " [ERROR] Search was not made");
 		System.out.println("Search by Nombre del Perro");
 		assertTrue(dogsPage.searchDogs(searchByOwner), " [ERROR] Search was not made");

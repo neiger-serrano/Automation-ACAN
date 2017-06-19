@@ -35,7 +35,7 @@ public class OwnersTests extends WebDriverManager{
 	public void verifyTypeSearchBar_ACAN_94(String searchByCodFed, String searchByName, String noValidSearch){
 		
 		ownersPage.searchOwners(searchByCodFed);
-		System.out.println("Search by Código de Federación");
+		System.out.println("Search by CÃ³digo de FederaciÃ³n");
 		ownersPage.searchOwners(searchByName);
 		System.out.println("Search by Nombre");
 		assertTrue(dogsPage.searchDogs(noValidSearch), " [ERROR] Search was not made"); //ACAN_95

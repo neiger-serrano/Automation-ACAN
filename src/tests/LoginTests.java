@@ -1,7 +1,7 @@
 package tests;
 
-import java.util.Arrays;
-import java.util.List;
+//import java.util.Arrays;
+//import java.util.List;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -16,7 +16,7 @@ import pages.LoginPage;
 public class LoginTests extends WebDriverManager{
 	
 	private LoginPage loginPage;
-	private List<String> sideMenu = Arrays.asList("Perros","Propietarios", "Administradores", "Cambiar ContraseÒa", "Cerrar SesiÛn");
+	//private List<String> sideMenu = Arrays.asList("Perros","Propietarios", "Administradores", "Cambiar Contrase√±a", "Cerrar Sesi√≥n");
 
 	@BeforeMethod
 	public void setUp(){
@@ -41,7 +41,7 @@ public class LoginTests extends WebDriverManager{
 		loginPage.logInValidation(email, pwd);
 		assertTrue(loginPage.verifyLoads(), " [ERROR] ");
 		// Implementar el verifyErrorMsg 
-		assertTrue(loginPage.verifyErrorMsg("Por favor revise sus credenciales o intentelo m·s tarde."), " [ERROR] ");
+		assertTrue(loginPage.verifyErrorMsg("Por favor revise sus credenciales o intentelo m√°s tarde."), " [ERROR] ");
 		assertAll();
 	}
 
@@ -49,7 +49,7 @@ public class LoginTests extends WebDriverManager{
 	@Test
 	public void forgotPasswordRegisteredEmail_ACAN_27(String email){
 		assertTrue(loginPage.forgotPwdEmail(email),  " [ERROR] ");
-		assertTrue(loginPage.verifyErrorMsg("Su contraseÒa ha sido enviada"), " [ERROR] ");
+		assertTrue(loginPage.verifyErrorMsg("Su contrase√±a ha sido enviada"), " [ERROR] ");
 		assertAll();
 	}
 	
@@ -57,7 +57,7 @@ public class LoginTests extends WebDriverManager{
 	@Test
 	public void forgotPasswordNotRegisteredEmail_ACAN_198(String email){
 		assertTrue(loginPage.forgotPwdEmail(email),   " [ERROR] ");
-		assertTrue(loginPage.verifyErrorMsg("Su correo electrÛnico no est· asociado a ning˙n usuario. Contacte al administrador del sistema para solucionar el problema."), " [ERROR] ");
+		assertTrue(loginPage.verifyErrorMsg("Su correo electr√≥nico no est√° asociado a ning√∫n usuario. Contacte al administrador del sistema para solucionar el problema."), " [ERROR] ");
 		assertAll();
 	}
 	
