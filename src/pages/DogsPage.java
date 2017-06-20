@@ -42,7 +42,7 @@ public class DogsPage extends BasePage{
 
 	@Override
 	public boolean verifyLoads() {
-		return waitForElementsVisible(searchBar, /*agregarButton,*/ dropdownEdit) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
+		return waitForElementsVisible(searchBar, agregarButton, dropdownEdit) && waitForListMatchSize(tableValues, 5) && nav.verifyLoads();
 	}
 	
 	
@@ -54,7 +54,6 @@ public class DogsPage extends BasePage{
 	
 	public RegisterDogPage registrarPerro(){
 		waitAndClick(nav.genericButton("AGREGAR"));
-		wait(3);
 		return new RegisterDogPage(driver);
 	}
 	

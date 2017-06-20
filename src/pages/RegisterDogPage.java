@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import generic.utils.web.BasePage;
 
-import pages.NavigationPage;
+//import pages.NavigationPage;
 
 public class RegisterDogPage extends BasePage{
 
@@ -28,7 +28,13 @@ public class RegisterDogPage extends BasePage{
 	@FindBy(xpath = "//input[@name='currentOwner']")
 	private WebElement currentOwner;
 	
-	private NavigationPage nav;
+	@FindBy(xpath = "//a[contains(text(),'SIGUIENTE')]")
+	private WebElement nextButton;
+	
+	@FindBy(xpath = "//a[contains(text(),'GUARDAR')]")
+	private WebElement saveButton;
+	
+	//private NavigationPage nav;
 	
 	
 	//**********CONSTRUCTOR*****************
@@ -53,9 +59,8 @@ public class RegisterDogPage extends BasePage{
 	
 	public boolean fillFields(String name, String cod, String chip){
 		return waitAndTypeOnCleanElement(inputFields.get(0), name) && waitAndTypeOnCleanElement(inputFields.get(1), cod) 
-				&& waitAndTypeOnCleanElement(inputFields.get(2), chip) && waitAndClick(nav.genericButton("SIGUIENTE")) 
-				&& wait(5) && waitAndTypeOnCleanElement(currentOwner, "12345-Neiger Serrano Mena") 
-				&& waitAndClick(nav.genericButton("GUARDAR"));
+				&& waitAndTypeOnCleanElement(inputFields.get(2), chip) && waitAndClick(nextButton) 
+				&& waitAndTypeOnCleanElement(currentOwner, "12345-Neiger Serrano Mena") && waitAndClick(saveButton);
 	}
 	
 }

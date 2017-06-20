@@ -65,11 +65,14 @@ public class DogsTests extends WebDriverManager{
 	public void verifyAgregarPerroSuccessfully(){
 		assertTrue(dogsPage.nav.clickMenuButton(), " [ERROR] Unable to hide side Menu");
 		registerDogPage = dogsPage.registrarPerro();
+		assertTrue(registerDogPage.verifyLoads(), " [ERROR] Register dog page not displayed correctly after click AGREGAR");
+		assertAll();
 		utilities = new Utilities();
 		String codChip = utilities.randomCodChip();
-		registerDogPage.fillFields(utilities.randomUserName(), codChip, codChip);
-		
-	}	
+		String name = utilities.randomUserName();
+		registerDogPage.fillFields(name, codChip, codChip);
+		System.out.println("Nombre: " + name + "\nCód Fed: " + codChip + "\nChip: " + codChip);	
+	}
 	
 	
 	@Test
