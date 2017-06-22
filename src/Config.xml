@@ -12,8 +12,8 @@
 		<parameter name="platform" value="windows" />
 		<parameter name="gridHubIP" value="127.0.0.1" />
 		<parameter name="gridDriverPath" value=""/>
-		<parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>
-		<!--<parameter name="localDriverPath" value="" />-->
+		<!-- <parameter name="localDriverPath" value="C:\SeleniumDriverServer\"/>  --><!-- windows -->
+		<parameter name="localDriverPath" value="" /> <!-- mac -->
 		<parameter name="staticTimeout" value="0" />
 		<parameter name="dynamicTimeout" value="30" />
 		<parameter name="geckoDriver" value="false"/>

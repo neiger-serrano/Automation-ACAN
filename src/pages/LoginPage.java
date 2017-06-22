@@ -18,8 +18,8 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath = "//input[@name='password']")
 	private WebElement passwordTextField;
 	
-	@FindBy(xpath = "//a[contains(text(),'Iniciar Sesión')]")
-	//@FindBy(xpath = "//div//a[@class='waves-effect waves-light btn']")
+	//@FindBy(xpath = "//a[contains(text(),'Iniciar Sesiï¿½n')]") //windows
+	@FindBy(xpath = "//a[contains(text(),'Iniciar SesiÃ³n')]") //mac
 	private WebElement signInBth;
 	
 	@FindBy(xpath = "//div//a[@href='#forgot-password']")

@@ -17,7 +17,8 @@ public class NavigationPage extends BasePage{
 	@FindBy(xpath = "//div//li//a[@class='menu-button']")
 	private List<WebElement> menuOptions;
 	
-	@FindBy(xpath = "//input[@name='Cerrar Sesión'")
+	//@FindBy(xpath = "//input[@name='Cerrar Sesiï¿½n'") //windows
+	@FindBy(xpath = "//input[@name='Cerrar SesiÃ³n'") //mac
 	private WebElement cerrarSesion;
 	
 	@FindBy(xpath = "//div[@class='current-user']//p[2]")
